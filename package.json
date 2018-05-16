@@ -1,0 +1,16 @@
+{
+  "name": "jwt_util",
+  "version": "1.0.0",
+  "description": "util libraray which uses JWT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+  }
+}

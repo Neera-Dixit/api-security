@@ -1,12 +1,28 @@
+import jwt from 'jsonwebtoken';
+
 const jwt_util = {
-  getToken: () => {
-
+  validateToken: async function validateToken(token, secretOrPublicKey, options) {
+    return new Promise((resolve,reject) => {
+      jwt.verify(token, secretOrPublicKey, (error, decoded) => {
+        if (error) {
+          reject(error);
+        }
+        resolve(decoded);
+      });
+    })
   },
-  validateToken: () => {
-
+  decodeToken: (token, options) => {
+    return jwt.decode(token, options);
   },
-  decodeToken: () => {
-    
+  createToken: async function createToken(payload, secretOrPrivateKey, options) {
+    return new Promise((resolve,reject) => {
+      jwt.sign(payload, secretOrPrivateKey, options, (error, token) => {
+        if (error) {
+          reject(error);
+        } 
+        resolve(token);
+      });
+    })
   }
 };
 

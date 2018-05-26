@@ -1,5 +1,12 @@
-import jwt_util from '../build/index';
-import config from '../src/config';
+
+jwtutil - node wrapper module built on top on jsonwebtoken
+
+To Install : npm i jwtUtil;
+
+Example to Use it
+
+import jwt_util from jwtutil;
+import config from 'some config file' //which public ket,private key or secret
 
 const options = {
   algorithm: 'RS256'
